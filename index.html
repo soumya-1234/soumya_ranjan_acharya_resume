@@ -2,46 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Soumya Ranjan Acharya | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
-    <section class="banner">
-        <header>
-            <a href="#" class="logo">Drop <span>X</span>
-            Out
-            </a>
+    <header>
+        <a href="#" class="logo">Soumya Ranjan Acharya</a>
+        <nav>
             <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="mailto:soumya977761@gmail.com" target="_blank">Contact</a>
-                </li>
-                <li>
-                    <a href="https://github.com/soumya-1234" target="_blank">GitHub</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/soumya-ranjan-acharya/" target="_blank">Linkedin</a>
-                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </header>
-        <div class="content">
-            <h2>I am <span id="text">DropXOut</span></h2>
-            <p>Let's Break the Matrix</p>
-            <button>Join Us</button>
-            <button class="chat">Let's Chat</button>
+        </nav>
+        <div class="dayNight" onclick="toggleTheme()">🌙</div>
+    </header>
+
+    <section class="hero">
+        <h1>Hi, I'm <span id="typed"></span></h1>
+        <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+        <a href="#projects" class="btn">View Projects</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Dynamic Full Stack Software Developer at Fynd, specializing in JavaScript, React, and microservices. Passionate about problem-solving and building scalable applications.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>React, Vue.js</li>
+            <li>Node.js, Express.js</li>
+            <li>MongoDB, MySQL</li>
+            <li>Kubernetes, Kafka, GCP</li>
+        </ul>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <p><strong>Fynd (Shopsense Retail Technologies Ltd.)</strong></p>
+        <ul>
+            <li>Developed public themes for Fynd platform.</li>
+            <li>Built and deployed public extensions.</li>
+            <li>Resolved critical platform issues.</li>
+            <li>Worked on microservices like Catalog, Order, and Theme Engine.</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-item">
+            <h3>Resume Helper</h3>
+            <p>Web app to streamline recruitment for recruiters and students.</p>
+            <a href="https://github.com/soumya-1234/resumehelperfullstack" target="_blank">GitHub Repo</a>
         </div>
-        <div class="dayNight">
-            <ion-icon name="moon-outline"></ion-icon>
-            <ion-icon name="sunny-outline"></ion-icon>
+        <div class="project-item">
+            <h3>Real-Time Stock & Crypto Tracker</h3>
+            <p>Next.js app tracking live stock & crypto prices.</p>
+            <a href="https://github.com/soumya-1234/crypto-place" target="_blank">GitHub Repo</a>
         </div>
     </section>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:soumyaranjanacharya335@gmail.com">soumyaranjanacharya335@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/soumya-ranjan-acharya" target="_blank">Profile</a></p>
+        <p>GitHub: <a href="https://github.com/soumya-1234" target="_blank">Profile</a></p>
+    </section>
+
+    <script>
+        let typed = new Typed("#typed", {
+            strings: ["Full Stack Developer", "JavaScript Enthusiast", "Problem Solver"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        }
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>
