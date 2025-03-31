@@ -3,80 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soumya Ranjan Acharya | Portfolio</title>
+    <title>Soumya Ranjan Acharya | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <a href="#" class="logo">Soumya Ranjan Acharya</a>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="dayNight" onclick="toggleTheme()">🌙</div>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <header class="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary dark:text-accent">SRA</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">About</a></li>
+                    <li><a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">Skills</a></li>
+                    <li><a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">Experience</a></li>
+                    <li><a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <i class="fas fa-moon text-gray-700 dark:text-gray-300"></i>
+            </button>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Hi, I'm <span id="typed"></span></h1>
-        <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-        <a href="#projects" class="btn">View Projects</a>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Dynamic Full Stack Software Developer at Fynd, specializing in JavaScript, React, and microservices. Passionate about problem-solving and building scalable applications.</p>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>React, Vue.js</li>
-            <li>Node.js, Express.js</li>
-            <li>MongoDB, MySQL</li>
-            <li>Kubernetes, Kafka, GCP</li>
-        </ul>
-    </section>
-
-    <section id="experience" class="experience">
-        <h2>Experience</h2>
-        <p><strong>Fynd (Shopsense Retail Technologies Ltd.)</strong></p>
-        <ul>
-            <li>Developed public themes for Fynd platform.</li>
-            <li>Built and deployed public extensions.</li>
-            <li>Resolved critical platform issues.</li>
-            <li>Worked on microservices like Catalog, Order, and Theme Engine.</li>
-        </ul>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-item">
-            <h3>Resume Helper</h3>
-            <p>Web app to streamline recruitment for recruiters and students.</p>
-            <a href="https://github.com/soumya-1234/resumehelperfullstack" target="_blank">GitHub Repo</a>
-        </div>
-        <div class="project-item">
-            <h3>Real-Time Stock & Crypto Tracker</h3>
-            <p>Next.js app tracking live stock & crypto prices.</p>
-            <a href="https://github.com/soumya-1234/crypto-place" target="_blank">GitHub Repo</a>
+    <section class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+                Hi, I'm <span id="typed" class="text-primary dark:text-accent"></span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+            <div class="space-x-4">
+                <a href="#projects" class="inline-block px-8 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">View Projects</a>
+                <a href="#contact" class="inline-block px-8 py-3 border-2 border-primary text-primary dark:border-accent dark:text-accent rounded-lg hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-white transition-colors">Contact Me</a>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:soumyaranjanacharya335@gmail.com">soumyaranjanacharya335@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/soumya-ranjan-acharya" target="_blank">Profile</a></p>
-        <p>GitHub: <a href="https://github.com/soumya-1234" target="_blank">Profile</a></p>
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Dynamic Full Stack Software Developer at Fynd, specializing in JavaScript, React, and microservices. Passionate about problem-solving and building scalable applications.</p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-primary dark:text-accent mb-2">2+</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Years Experience</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold text-primary dark:text-accent mb-2">10+</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Projects Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Skills</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-accent">Frontend</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-600 dark:text-gray-300">JavaScript</li>
+                        <li class="text-gray-600 dark:text-gray-300">React</li>
+                        <li class="text-gray-600 dark:text-gray-300">Vue.js</li>
+                        <li class="text-gray-600 dark:text-gray-300">HTML5/CSS3</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-accent">Backend</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-600 dark:text-gray-300">Node.js</li>
+                        <li class="text-gray-600 dark:text-gray-300">Express.js</li>
+                        <li class="text-gray-600 dark:text-gray-300">MongoDB</li>
+                        <li class="text-gray-600 dark:text-gray-300">MySQL</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-accent">DevOps</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-600 dark:text-gray-300">Kubernetes</li>
+                        <li class="text-gray-600 dark:text-gray-300">Kafka</li>
+                        <li class="text-gray-600 dark:text-gray-300">GCP</li>
+                        <li class="text-gray-600 dark:text-gray-300">Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Experience</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-primary dark:text-accent">Full Stack Developer</h3>
+                    <h4 class="text-xl text-gray-600 dark:text-gray-300 mb-4">Fynd (Shopsense Retail Technologies Ltd.)</h4>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>• Developed public themes for Fynd platform</li>
+                        <li>• Built and deployed public extensions</li>
+                        <li>• Resolved critical platform issues</li>
+                        <li>• Worked on microservices like Catalog, Order, and Theme Engine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-accent">Resume Helper</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Web app to streamline recruitment for recruiters and students.</p>
+                    <a href="https://github.com/soumya-1234/resumehelperfullstack" target="_blank" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">
+                        <i class="fab fa-github mr-2"></i> View Code
+                    </a>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-4 text-primary dark:text-accent">Real-Time Stock & Crypto Tracker</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Next.js app tracking live stock & crypto prices.</p>
+                    <a href="https://github.com/soumya-1234/crypto-place" target="_blank" class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">
+                        <i class="fab fa-github mr-2"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-2xl text-primary dark:text-accent"></i>
+                            <a href="mailto:soumyaranjanacharya335@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">soumyaranjanacharya335@gmail.com</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fab fa-linkedin text-2xl text-primary dark:text-accent"></i>
+                            <a href="https://www.linkedin.com/in/soumya-ranjan-acharya" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">LinkedIn Profile</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fab fa-github text-2xl text-primary dark:text-accent"></i>
+                            <a href="https://github.com/soumya-1234" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors">GitHub Profile</a>
+                        </div>
+                    </div>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Name" required class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent">
+                        <input type="email" placeholder="Email" required class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent">
+                        <textarea placeholder="Message" required class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent h-32"></textarea>
+                        <button type="submit" class="w-full px-8 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-300">
+            <p>&copy; 2024 Soumya Ranjan Acharya. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Typed.js initialization
         let typed = new Typed("#typed", {
             strings: ["Full Stack Developer", "JavaScript Enthusiast", "Problem Solver"],
             typeSpeed: 100,
@@ -84,14 +202,32 @@
             loop: true
         });
 
+        // Theme toggle
         function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+            document.documentElement.classList.toggle('dark');
+            const icon = document.querySelector('.dayNight i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+            localStorage.setItem("theme", document.documentElement.classList.contains('dark') ? "dark" : "light");
         }
+
+        // Check for saved theme preference
         if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
+            document.documentElement.classList.add('dark');
+            const icon = document.querySelector('.dayNight i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
         }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
-    <link rel="stylesheet" href="style.css">
 </body>
 </html>
